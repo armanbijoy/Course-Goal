@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View, ScrollView, FlatList } from 'react-native';
-
+import Goalitem from './compenents/Goalitem';
 
 export default function App() {
 
@@ -29,10 +29,7 @@ export default function App() {
       <View style={styles.goalsContainer}>
       <FlatList data={courseGoals} renderItem={item=>{
         return (
-          <View>
-          {courseGoals.map((goal)=> <Text style={styles.goalItem} key={Math.random()}>{goal}
-          </Text>)}
-            </View>
+         <Goalitem text={courseGoals}/>
         )
       }}/>
        
@@ -72,13 +69,7 @@ const styles = StyleSheet.create({
   goalsContainer:{
     flex:3
   },
-  goalItem:{
-    margin: 8,
-    borderRadius: 8,
-    backgroundColor: '#5e0acc',
-    padding:10,
-    color: 'white'
-  },
+ 
  
 
 });
